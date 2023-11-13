@@ -1,0 +1,1 @@
+{{linkv2('stg_partsupp',['h_part_haskey','h_supplier_haskey'],['partkey','suppkey'],'l_part_supp_haskey')}}

@@ -1,0 +1,62 @@
+
+# version: 2
+
+# models:
+#   - name: s_customer
+#     description: "Satelite de customers"
+#     columns:
+#       - name: h_customer_haskey
+#         description: "Clave primaria en formato md5"
+#        # tests:
+#        #      - unique
+#        #      - not_null
+#       - name: has_diff
+#         description: "Has generado a partir de nombre direccion y telefono"
+#       - name: load_record
+#         description: "Tiempo de carga del dato"
+#         tests:
+#           - test_fecha
+#       #- name: is_active
+#       #  description: "Indica si customer sigue activo, 0=false 1=true"
+#        # tests:
+#         #  - is_active
+#       - name: last_modified
+#         description: "Ultima fecha de modificacion"
+#       - name: source
+#         description: "Lugar de donde cargo el dato"
+#       - name: custkey
+#         description: "Clave de customers"
+#         #tests:
+#         #    - unique
+#         #    - not_null
+#       - name: addres
+#         description: "Direccion del customer"
+#       - name: comment
+#         description: "Comentarios adicionales"
+#       - name: mktsegment
+#         description: ""
+#       - name: name
+#         description: "Nombre del customer"
+#         tests:
+#            - not_null
+#       - name: phone
+#         description: "numero de telefono"
+#       - name: accbal
+#         description: ""
+#   - name: h_customer
+#     description: "Hub de customers"
+#     columns:
+#       - name: h_customer_haskey
+#         description: "Clave primaria en formato md5"
+#        # tests:
+#         #  - unique
+#          # - not_null
+#       - name: custkey
+#         description: "Clave de customers"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: load_record
+#         tests:
+#           - test_fecha
+

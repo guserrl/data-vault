@@ -1,0 +1,49 @@
+# version: 2
+
+# models:
+#   - name: s_nation
+#     description: "Satelite de nation"
+#     columns:
+#       - name: h_nation_haskey
+#         description: "Clave primaria en formato md5"
+#        # tests:
+#        #      - unique
+#        #      - not_null
+#       - name: has_diff
+#         description: "Has generado a partir de nombre name y comment"
+#       - name: load_record
+#         description: "Tiempo de carga del dato"
+#         tests:
+#           - test_fecha
+#       - name: last_modified
+#         description: "Ultima fecha de modificacion"
+#       - name: source
+#         description: "Lugar de donde cargo el dato"
+#       - name: nationkey
+#         description: "Clave de nation"
+#         #tests:
+#         #    - unique
+#         #    - not_null
+#       - name: comment
+#         description: "Comentarios adicionales"
+#       - name: name
+#         description: "Nombre de nation"
+#         tests:
+#            - not_null
+#   - name: h_nation
+#     columns:
+#       - name: h_nation_haskey
+#         description: "Clave primaria en formato md5"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: nationkey
+#         description: "Clave de nation"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: load_record
+#         tests:
+#           - test_fecha
+#       - name: source
+#         description: "Lugar de donde cargo el dato"

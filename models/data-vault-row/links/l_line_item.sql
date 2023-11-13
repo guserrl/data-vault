@@ -1,0 +1,1 @@
+{{linkv2('stg_line_item',['h_order_haskey','h_part_haskey','h_supplier_haskey'],['orderkey','partkey','suppkey'],'l_line_item_haskey')}}

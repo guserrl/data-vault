@@ -1,0 +1,59 @@
+# version: 2
+
+# models:
+#   - name: s_part
+#     description: "Satelite de part"
+#     columns:
+#       - name: h_part_haskey
+#         description: "Clave primaria en formato md5"
+#         #tests:
+#         #     - unique
+#         #     - not_null
+#       - name: has_diff
+#         description: "Has generado a partir de clerk comment partdate etc"
+#       - name: load_record
+#         description: "Tiempo de carga del dato"
+#         tests:
+#           - test_fecha
+#       - name: last_modified
+#         description: "Ultima fecha de modificacion"
+#       - name: source
+#         description: "Lugar de donde cargo el dato"
+#       - name: partkey
+#         description: "Clave de part"
+#         #tests:
+#         #    - unique
+#         #    - not_null
+#       - name: brand
+#         description: ""
+#       - name: comment
+#         description: "Comentarios adicionales"
+#       - name: container
+#         description: ""
+#       - name: mfgr
+#         description: ""
+#       - name: name
+#         description: ""
+#       - name: retailprice
+#         description: ""
+#       - name: size
+#         description: ""
+#       - name: type
+#         description: ""
+#   - name: h_part
+#     columns:
+#       - name: h_part_haskey
+#         description: "Clave primaria en formato md5"
+#         #tests:
+#         #  - unique
+#         #  - not_null
+#       - name: partkey
+#         description: "Clave de part"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: load_record
+#         tests:
+#           - test_fecha
+#       - name: source
+#         description: "Lugar de donde cargo el dato"

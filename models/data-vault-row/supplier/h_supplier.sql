@@ -1,0 +1,1 @@
+{{hub('h_supplier_haskey','suppkey','s_supplier')}}

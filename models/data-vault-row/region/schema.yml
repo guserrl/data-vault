@@ -1,0 +1,49 @@
+# version: 2
+
+# models:
+#   - name: s_region
+#     description: "Satelite de region"
+#     columns:
+#       - name: h_region_haskey
+#         description: "Clave primaria en formato md5"
+#         #tests:
+#         #     - unique
+#         #     - not_null
+#       - name: has_diff
+#         description: "Has generado a partir de nombre name y comment"
+#       - name: load_record
+#         description: "Tiempo de carga del dato"
+#         tests:
+#           - test_fecha
+#       - name: last_modified
+#         description: "Ultima fecha de modificacion"
+#       - name: source
+#         description: "Lugar de donde cargo el dato"
+#       - name: regionkey
+#         description: "Clave de region"
+#         #tests:
+#         #    - unique
+#         #    - not_null
+#       - name: comment
+#         description: "Comentarios adicionales"
+#       - name: name
+#         description: "Nombre de region"
+#         tests:
+#           - not_null
+#   - name: h_region
+#     columns:
+#       - name: h_region_haskey
+#         description: "Clave primaria en formato md5"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: regionkey
+#         description: "Clave de region"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: load_record
+#         tests:
+#           - test_fecha
+#       - name: source
+#         description: "Lugar de donde cargo el dato"

@@ -1,0 +1,243 @@
+version: 2
+
+models:
+  #customer
+  - name: h_customer
+    config:
+      materialized: incremental
+      unique_key : h_customer_haskey
+      incremental_strategy: delete+insert
+    columns:
+      - name: h_customer_haskey
+        tests:
+          - relationships:
+              field: h_customer_haskey
+              to: ref('s_customer')
+  - name: s_customer
+    config:
+      materialized: incremental
+      unique_key : [h_customer_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_customer_haskey,custkey]
+    columns:
+      - name: h_customer_haskey
+        tests:
+          - relationships:
+              field: h_customer_haskey
+              to: ref('h_customer')
+    #nation
+  - name: h_nation
+    config:
+      materialized: incremental
+      unique_key : h_nation_haskey
+      incremental_strategy: delete+insert
+    # columns:
+    #   - name: h_nation_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('s_nation')
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('l_nation_region')
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('l_supplier_nation')
+  - name: s_nation
+    config:
+      materialized: incremental
+      unique_key : [h_nation_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_nation_haskey,nationkey]
+    # columns:
+    #   - name: h_nation_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('h_nation')
+    #orders
+  - name: h_orders
+    config:
+      materialized: incremental
+      unique_key : h_order_haskey
+      incremental_strategy: delete+insert
+    columns:
+      - name: h_order_haskey
+        tests:
+          - relationships:
+              field: h_order_haskey
+              to: ref('s_orders')
+  - name: s_orders
+    config:
+      materialized: incremental
+      unique_key : [h_order_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_order_haskey,orderkey]
+    columns:
+      - name: h_order_haskey
+        tests:
+          - relationships:
+              field: h_order_haskey
+              to: ref('h_orders')
+    #part
+  - name: h_part
+    config:
+      materialized: incremental
+      unique_key : h_part_haskey
+      incremental_strategy: delete+insert
+  - name: s_part
+    config:
+      materialized: incremental
+      unique_key : [h_part_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_part_haskey,partkey]
+    #region
+  - name: h_region
+    config:
+      materialized: incremental
+      unique_key : h_region_haskey
+      incremental_strategy: delete+insert
+  - name: s_region
+    config:
+      materialized: incremental
+      unique_key : [h_region_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_region_haskey,regionkey]
+    #supplier
+  - name: h_supplier
+    config:
+      materialized: incremental
+      unique_key : h_supplier_haskey
+      incremental_strategy: delete+insert
+  - name: s_supplier
+    config:
+      materialized: incremental
+      unique_key : [h_supplier_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [h_supplier_haskey,suppkey]
+    #links
+  - name: l_customer_nation
+    config:
+      materialized: incremental
+      unique_key : l_customer_nation_haskey
+      incremental_strategy: delete+insert
+    # columns:
+    #   - name: h_customer_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_customer_haskey
+    #           to: ref('h_customer')
+    #   - name: h_nation_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('h_nation')
+  # - name: l_customer_order
+  #   config:
+  #     materialized: incremental
+  #     unique_key : l_customer_order_haskey
+  #     incremental_strategy: delete+insert
+  #   columns:
+  #     - name: h_order_haskey
+  #       tests:
+  #         - relationships:
+  #             field: h_order_haskey
+  #             to: ref('h_orders')
+  #     - name: h_customer_haskey
+  #       tests:
+  #         - relationships:
+  #             field: h_customer_haskey
+  #             to: ref('h_customer')
+  # - name: l_line_item
+  #   config:
+  #     materialized: incremental
+  #     unique_key : l_line_item_haskey
+  #     incremental_strategy: delete+insert
+  #   columns:
+  #     - name: h_order_haskey
+  #       tests:
+  #         - relationships:
+  #             field: h_order_haskey
+  #             to: ref('h_orders')
+  #     - name: h_part_haskey
+  #       tests:
+  #         - relationships:
+  #             field: h_part_haskey
+  #             to: ref('h_part')
+  #     - name: h_supplier_haskey
+  #       tests:
+  #         - relationships:
+  #             field: h_supplier_haskey
+  #             to: ref('h_supplier')
+  # - name: l_nation_region
+  #   config:
+  #     materialized: incremental
+  #     unique_key : l_nation_region_haskey
+  #     incremental_strategy: delete+insert
+    # columns:
+    #   - name: h_nation_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('h_nation')
+    #   - name: h_region_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_region_haskey
+    #           to: ref('h_region')
+  - name: l_part_supp
+    config:
+      materialized: incremental
+      unique_key : l_part_supp_haskey
+      incremental_strategy: delete+insert
+    columns:
+      - name: h_part_haskey
+        tests:
+          - relationships:
+              field: h_part_haskey
+              to: ref('h_part')
+      - name: h_supplier_haskey
+        tests:
+          - relationships:
+              field: h_supplier_haskey
+              to: ref('h_supplier')
+  - name: l_supplier_nation
+    config:
+      materialized: incremental
+      unique_key : l_supplier_nation_haskey
+      incremental_strategy: delete+insert
+    # columns:
+    #   - name: h_supplier_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_supplier_haskey
+    #           to: ref('h_supplier')
+    #   - name: h_nation_haskey
+    #     tests:
+    #       - relationships:
+    #           field: h_nation_haskey
+    #           to: ref('h_nation')
+  - name: s_lineitem_receipt
+    config:
+      materialized: incremental
+      unique_key : [l_line_item_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [l_line_item_haskey]
+  - name: s_lineitem_ship
+    config:
+      materialized: incremental
+      unique_key : [l_line_item_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [l_line_item_haskey]
+  - name: s_lineitem_status
+    config:
+      materialized: incremental
+      unique_key : [l_line_item_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [l_line_item_haskey]
+  - name: s_part_supp
+    config:
+      materialized: incremental
+      unique_key : [l_part_supp_haskey,load_record]
+      incremental_strategy: merge
+      merge_exclude_columns: [l_part_supp_haskey,partkey,suppkey]

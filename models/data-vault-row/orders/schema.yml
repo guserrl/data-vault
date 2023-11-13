@@ -1,0 +1,61 @@
+# version: 2
+
+# models:
+#   - name: s_orders
+#     description: "Satelite de order"
+#     columns:
+#       - name: h_order_haskey
+#         description: "Clave primaria en formato md5"
+#         tests:
+#              - unique
+#              - not_null
+#       - name: has_diff
+#         description: "Has generado a partir de clerk comment orderdate etc"
+#       - name: load_record
+#         description: "Tiempo de carga del dato"
+#         tests:
+#           - test_fecha
+#       #- name: is_active
+#       #  description: "Indica si customer sigue activo, 0=false 1=true"
+#       #  tests:
+#       #    - is_active
+#       - name: last_modified
+#         description: "Ultima fecha de modificacion"
+#       - name: source
+#         description: "Lugar de donde cargo el dato"
+#       - name: orderkey
+#         description: "Clave de order"
+#         tests:
+#             - unique
+#             - not_null
+#       - name: clerk
+#         description: ""
+#       - name: comment
+#         description: "Comentarios adicionales"
+#       - name: orderdate
+#         description: "Fecha de pedido "
+#       - name: orderpriority
+#         description: "Prioridad del pedido"
+#       - name: orderstatus
+#         description: "Estado del pedido"
+#       - name: shippriority
+#         description: "Prioridad del barco"
+#       - name: totalprice
+#         description: "Precio total del pedido"
+#   - name: h_order
+#     columns:
+#       - name: h_order_haskey
+#         description: "Clave primaria en formato md5"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: orderkey
+#         description: "Clave de order"
+#         tests:
+#           - unique
+#           - not_null
+#       - name: load_record
+#         tests:
+#           - test_fecha
+#       - name: source
+#         description: "Lugar de donde cargo el dato"

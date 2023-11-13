@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_hist_customer
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_line_item
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_nation
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_orders
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_part
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_partsupp
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_region
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append
+  - name: stg_hist_supplier
+    config:
+      full_refresh: false
+      materialized: incremental
+      incremental_strategy: append

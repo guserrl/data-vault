@@ -1,0 +1,1 @@
+{{ link('stg_customer','h_customer_haskey',['custkey','nationkey'],'h_nation_haskey','l_customer_nation_haskey') }}
