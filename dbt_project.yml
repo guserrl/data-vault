@@ -40,6 +40,10 @@ models:
       materialized: table
     staging:
       materialized: view
+    pit:
+      materialized: table
+    bridge:
+      materialized: table
   elementary:
     +schema: "elementary"
 

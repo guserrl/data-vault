@@ -3,6 +3,7 @@ version: 2
 models:
   #customer
   - name: h_customer
+    description: '{{ doc("customer") }}'
     config:
       materialized: incremental
       unique_key : h_customer_haskey
