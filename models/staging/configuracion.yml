@@ -1,11 +1,12 @@
-# version: 2
+version: 2
 
-# models:
-#   - name: stg_customer
-#     config:
-#       materialized: incremental
-#       unique_key : h_customer_haskey
-#       incremental_strategy: delete+insert
+models:
+  - name: stg_customer
+    config:
+      elementary:
+        timestamp_column: "load_data"
+      tests:
+        - elementary.volume_anomalies
 #   - name: stg_line_item
 #     config:
 #       materialized: incremental
@@ -16,21 +17,21 @@
 #       materialized: incremental
 #       unique_key : h_nation_haskey
 #       incremental_strategy: delete+insert
-#   - name: stg_orders
-#     config:
-#       materialized: incremental
-#       unique_key : h_order_haskey
-#       incremental_strategy: delete+insert
+  # - name: stg_orders
+  #   config:
+  #     materialized: incremental
+  #     unique_key : h_order_haskey
+  #     incremental_strategy: delete+insert
 #   - name: stg_part
 #     config:
 #       materialized: incremental
 #       unique_key : h_part_haskey
 #       incremental_strategy: delete+insert
-#   - name: stg_region
-#     config:
-#       materialized: incremental
-#       unique_key : h_region_haskey
-#       incremental_strategy: delete+insert
+  # - name: stg_region
+  #   config:
+  #     materialized: incremental
+  #     unique_key : h_region_haskey
+  #     incremental_strategy: delete+insert
 #   - name: stg_supplier
 #     config:
 #       materialized: incremental
