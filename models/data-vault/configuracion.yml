@@ -242,3 +242,18 @@ models:
       unique_key : [l_part_supp_haskey,load_record]
       incremental_strategy: merge
       merge_exclude_columns: [l_part_supp_haskey,partkey,suppkey]
+  - name: bridge_customer_nation_region
+    config:
+      materialized: incremental
+      unique_key : b_customer_nation_region_haskey
+      incremental_strategy: delete+insert
+  - name: bridge_lineitem_customer
+    config:
+      materialized: incremental
+      unique_key : b_customer_nation_region_haskey
+      incremental_strategy: delete+insert
+  - name: pit_lineitem
+    config:
+      materialized: incremental
+      unique_key : l_line_item_haskey
+      incremental_strategy: delete+insert
