@@ -5,40 +5,71 @@ models:
     config:
       elementary:
         timestamp_column: "load_data"
-      tests:
-        - elementary.volume_anomalies
-#   - name: stg_line_item
-#     config:
-#       materialized: incremental
-#       unique_key : l_line_item_haskey
-#       incremental_strategy: delete+insert
-#   - name: stg_nation
-#     config:
-#       materialized: incremental
-#       unique_key : h_nation_haskey
-#       incremental_strategy: delete+insert
-  # - name: stg_orders
-  #   config:
-  #     materialized: incremental
-  #     unique_key : h_order_haskey
-  #     incremental_strategy: delete+insert
-#   - name: stg_part
-#     config:
-#       materialized: incremental
-#       unique_key : h_part_haskey
-#       incremental_strategy: delete+insert
-  # - name: stg_region
-  #   config:
-  #     materialized: incremental
-  #     unique_key : h_region_haskey
-  #     incremental_strategy: delete+insert
-#   - name: stg_supplier
-#     config:
-#       materialized: incremental
-#       unique_key : h_supplier_haskey
-#       incremental_strategy: delete+insert
-#   - name: stg_partsupp
-#     config:
-#       materialized: incremental
-#       unique_key : part_supp_haskey
-#       incremental_strategy: delete+insert
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_line_item
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_nation
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_orders
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_part
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_region
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_supplier
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+  - name: stg_partsupp
+    config:
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+       - elementary.volume_anomalies:
+          time_bucket:
+            period: hour
+            count: 1

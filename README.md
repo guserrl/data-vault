@@ -26,3 +26,7 @@ Dentro de la carpeta models encontramos:
 - [ Error comun](https://discourse.getdbt.com/t/package-installation-fails-on-windows-when-directory-paths-are-very-long/5007)
 - [Intalacion dbt core](https://docs.getdbt.com/docs/core/installation)
 - [Elementary](https://docs.elementary-data.com/introduction)
+
+### dbt core
+para usar el dbt core y ejecutar en locla usar el perfil elementary
+Ejemlpo: dbt run --profile elementary

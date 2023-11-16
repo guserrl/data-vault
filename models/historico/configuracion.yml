@@ -6,11 +6,20 @@ models:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+    tests:
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_line_item
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+      - elementary.dimension_anomalies:
+          dimensions: 
+            - l_line_item_haskey
   - name: stg_hist_nation
     config:
       full_refresh: false
@@ -21,6 +30,12 @@ models:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+      - elementary.dimension_anomalies:
+          dimensions: 
+            - orderstatus
   - name: stg_hist_part
     config:
       full_refresh: false
@@ -31,6 +46,10 @@ models:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+      elementary:
+        timestamp_column: "load_data"
+    tests:
+      - elementary.all_columns_anomalies
   - name: stg_hist_region
     config:
       full_refresh: false

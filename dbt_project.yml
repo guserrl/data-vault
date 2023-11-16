@@ -44,8 +44,8 @@ models:
       materialized: table
     bridge:
       materialized: table
-  elementary:
-      schema: "elementary"
+    elementary:
+        +schema: "elementary"
 
 vars:
     "dbt_date:time_zone": "Europe/Madrid"
