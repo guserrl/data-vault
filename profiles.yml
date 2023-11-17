@@ -3,11 +3,11 @@ elementary:
   outputs:
     dev:
       type: "snowflake"
-      account: "FGTPTGU-LR92863"
-      user: "guserrl2"
-      password: "151516G1.,ul"
-      role: ACCOUNTADMIN
-      warehouse: "PC_DBT_WH"
-      database: "PC_DBT_DB"
-      schema: "DBT_GDBT_elementary"
+      account: "{{ env_var('DBT_ACCOUNT') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      role: "{{ env_var('DBT_ROLE') }}"
+      warehouse: "{{ env_var('DBT_WAREHOUSE') }}"
+      database: "{{ env_var('DBT_DATABASE') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
       threads: 4

@@ -28,5 +28,12 @@ Dentro de la carpeta models encontramos:
 - [Elementary](https://docs.elementary-data.com/introduction)
 
 ### dbt core
-para usar el dbt core y ejecutar en locla usar el perfil elementary
-Ejemlpo: dbt run --profile elementary
+para usar el dbt core y ejecutar en locla usar el perfil elementary  
+Ejemplo: dbt run --profile elementary
+
+
+### Cosas
+- [ a](https://superuser.com/questions/341192/how-can-i-display-the-contents-of-an-environment-variable-from-the-command-promp)
+- [ a](https://stackoverflow.com/questions/71920945/env-var-required-but-not-provided-dbt-cli)
+- [ a](https://medium.com/indiciumtech/understanding-dbt-incremental-strategies-part-1-2-22bd97c7eeb5)
+- [a](https://fivetran.com/docs/transformations/dbt/faq/duplicate-row-detected)
