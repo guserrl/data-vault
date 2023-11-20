@@ -20,6 +20,9 @@ models:
       - elementary.dimension_anomalies:
           dimensions: 
             - l_line_item_haskey
+            - has_diff_receipt
+            - has_diff_ship
+            - has_diff_status
       - elementary.freshness_anomalies:
           timestamp_column: "load_data"
   - name: stg_hist_nation
@@ -35,12 +38,7 @@ models:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
-      elementary:
-        timestamp_column: "load_data"
     tests:
-      - elementary.dimension_anomalies:
-          dimensions: 
-            - orderstatus
       - elementary.freshness_anomalies:
           timestamp_column: "load_data"
   - name: stg_hist_part

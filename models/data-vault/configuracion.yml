@@ -1,7 +1,6 @@
 version: 2
 
 models:
-  #customer
   - name: h_customer
     tests:
       - elementary.event_freshness_anomalies:
@@ -32,7 +31,6 @@ models:
           - relationships:
               field: h_customer_haskey
               to: ref('h_customer')
-  #nation
   - name: h_nation
     config:
       materialized: incremental
