@@ -1,7 +1,6 @@
 version: 2
 
 models:
-  #customer
   - name: h_customer
     tests:
       - elementary.event_freshness_anomalies:
@@ -32,7 +31,6 @@ models:
           - relationships:
               field: h_customer_haskey
               to: ref('h_customer')
-  #nation
   - name: h_nation
     config:
       materialized: incremental
@@ -177,23 +175,6 @@ models:
           - relationships:
               field: h_customer_haskey
               to: ref('h_customer')
-  - name: l_line_item
-    columns:
-      - name: h_order_haskey
-        tests:
-          - relationships:
-              field: h_order_haskey
-              to: ref('h_orders')
-      - name: h_part_haskey
-        tests:
-          - relationships:
-              field: h_part_haskey
-              to: ref('h_part')
-      - name: h_supplier_haskey
-        tests:
-          - relationships:
-              field: h_supplier_haskey
-              to: ref('h_supplier')
   - name: l_nation_region
     columns:
       - name: h_nation_haskey
@@ -223,7 +204,7 @@ models:
     config:
       materialized: incremental
       unique_key : l_part_supp_haskey
-      incremental_strategy: merge
+      incremental_strategy: delete+insert
     columns:
       - name: h_part_haskey
         tests:
@@ -257,7 +238,7 @@ models:
     config:
       materialized: incremental
       unique_key : l_line_item_haskey
-      incremental_strategy: merge
+      incremental_strategy: delete+insert
     columns:
       - name: h_order_haskey
         test:

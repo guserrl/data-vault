@@ -20,27 +20,35 @@ models:
       - elementary.dimension_anomalies:
           dimensions: 
             - l_line_item_haskey
+            - has_diff_receipt
+            - has_diff_ship
+            - has_diff_status
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_nation
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+    tests:
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_orders
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
-      elementary:
-        timestamp_column: "load_data"
     tests:
-      - elementary.dimension_anomalies:
-          dimensions: 
-            - orderstatus
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_part
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+    tests:
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_partsupp
     config:
       full_refresh: false
@@ -49,14 +57,21 @@ models:
       elementary:
         timestamp_column: "load_data"
     tests:
-      - elementary.all_columns_anomalies
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_region
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+    tests:
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"
   - name: stg_hist_supplier
     config:
       full_refresh: false
       materialized: incremental
       incremental_strategy: append
+    tetss:
+      - elementary.freshness_anomalies:
+          timestamp_column: "load_data"

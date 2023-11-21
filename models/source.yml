@@ -4,6 +4,11 @@ sources:
   - name: tabla
     database: pc_dbt_db #snowflake_sample_data
     schema: copia #tpch_sf1
+    freshness: #se ha creado la columna fresh_data con el objetivo de probar y estudiar esta configuracion y ver los resultados en elementary
+      warn_after:
+        count: 3
+        period: day
+    loaded_at_field: fresh_data
     tables:
       - name: customer
       - name: lineitem
