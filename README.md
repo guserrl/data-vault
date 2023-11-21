@@ -45,4 +45,5 @@ Ejemplo: dbt run --profile elementary
 - [8](https://docs.getdbt.com/reference/commands/cmd-docs)  
 - [9](https://stackoverflow.com/help/minimal-reproducible-example)  
 - [10](https://www.montecarlodata.com/blog-8-data-quality-issues)  
-- [11](https://www.datafold.com/blog/7-dbt-testing-best-practices)
+- [11](https://www.datafold.com/blog/7-dbt-testing-best-practices)  
+- [12](https://medium.com/indiciumtech/17-dbt-commands-you-should-start-using-today-581998dbf8f0)
