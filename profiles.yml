@@ -10,20 +10,4 @@ elementary:
       warehouse: "{{ env_var('DBT_WAREHOUSE') }}"
       database: "{{ env_var('DBT_DATABASE') }}"
       schema: "{{ env_var('DBT_SCHEMA') }}"
-      threads: 4
-
-#En dbt cloud no sera necesario este profile
-#En este profile, solo entan los modelos de data vault, no los de elementary en el schema DBT_GDBT
-# default:
-#   target: dev
-#   outputs:
-#     dev:
-#       type: "snowflake"
-#       account: "{{ env_var('DBT_ACCOUNT') }}"
-#       user: "{{ env_var('DBT_USER') }}"
-#       password: "{{ env_var('DBT_PASSWORD') }}"
-#       role: "{{ env_var('DBT_ROLE') }}"
-#       warehouse: "{{ env_var('DBT_WAREHOUSE') }}"
-#       database: "{{ env_var('DBT_DATABASE') }}"
-#       schema: "DBT_GDBT"
-#       threads: 4
+      threads: 8

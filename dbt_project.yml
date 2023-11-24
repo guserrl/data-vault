@@ -34,17 +34,21 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-    data-vault-row:
+    data-vault:
       materialized: table
+      +schema: "data_vault"
     historico:
       materialized: table
+      +schema: "historico"
     staging:
       materialized: view
-    elementary:
-      schema: "elementary"
-    dim:
+      +schema: "staging"
+    dim: 
       materialized: table
-      schema: "dim"
+      +schema: "dim"
+  elementary: 
+    +schema: elementary
+    
 
 vars:
     "dbt_date:time_zone": "Europe/Madrid"

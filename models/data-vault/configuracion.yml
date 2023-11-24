@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: h_customer
+    description: '{{ doc("customer") }}'
     tests:
       - elementary.event_freshness_anomalies:
           event_timestamp_column: "load_record"

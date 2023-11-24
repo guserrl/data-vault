@@ -9,7 +9,7 @@ with part as (
     ,container
     ,retailprice
     ,comment as spart_comment
-    from {{ref('stg_part')}}
+    from {{ref('s_part')}}
 )
 , supp as (
     select 
@@ -19,14 +19,15 @@ with part as (
     ,phone
     ,acctbal
     ,comment as supp_comment
-    from {{ref('stg_supplier')}}
+    from {{ref('s_supplier')}}
 )
 , partsupp as (
     select 
-    partkey
-    ,suppkey
-    ,supplycost
-    from {{ref('stg_partsupp')}}
+    l.partkey
+    ,l.suppkey
+    ,s.supplycost
+    ,s.has_diff
+    from {{ref('l_part_supp')}} l join {{ref('s_part_supp')}} s on l.partkey=s.partkey and l.suppkey=s.suppkey
 )
 ,final as (
     select
@@ -45,6 +46,8 @@ with part as (
     ,s.phone
     ,s.acctbal
     ,s.supp_comment
-    --,ps.supplycost
+    ,ps.supplycost
+    ,ps.has_diff
     from (part p join partsupp ps on p.partkey=ps.partkey) join supp s on s.suppkey=ps.suppkey
 )select * from final
+

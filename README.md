@@ -6,8 +6,8 @@ Se a usado este schema de snowflake como datos para crear el data vault, primero
 ![dbt Logo](https://docs.snowflake.com/en/_images/sample-data-tpch-schema.png)
 
 #### Modelado inicial
-[link](https://dbdiagram.io/d/Data-vault-651fb156ffbf5169f02825a3)
-
+[link](https://dbdiagram.io/d/Data-vault-651fb156ffbf5169f02825a3)  
+[estrella](https://dbdiagram.io/d/modelo-dimensional-star-655b543e3be1495787597ac8)
 
 #### Descripcion
 
@@ -19,7 +19,8 @@ Dentro del projecto podemos encontrar:
 Dentro de la carpeta models encontramos:
   - stagin: capa staging del projecto
   - historico: se tendra un historico de la evolucion de los datos a medida que se realizan sus cargas
-  - data-vault: contiene los modelos de los hub,satelites,links,bridge y pit del data vault
+  - data-vault: contiene los modelos de los hub,satelites,links,bridge y pit del data vault  
+  - dim: contiene los modelos del modelado dimensional en estrella
 
 
 #### Resources:
@@ -29,10 +30,7 @@ Dentro de la carpeta models encontramos:
 - [Elementary](https://docs.elementary-data.com/introduction)
 
 ### dbt core
-para usar el dbt core y ejecutar en local usar el perfil elementary  
-Ejemplo: dbt run --profile elementary
-
-  para los teste de freshnes, primero usar dbt source freshness
+  Para los teste de freshnes, primero usar dbt source freshness
 
 ### Cosas
 - [ 1](https://superuser.com/questions/341192/how-can-i-display-the-contents-of-an-environment-variable-from-the-command-promp)
@@ -46,4 +44,10 @@ Ejemplo: dbt run --profile elementary
 - [9](https://stackoverflow.com/help/minimal-reproducible-example)  
 - [10](https://www.montecarlodata.com/blog-8-data-quality-issues)  
 - [11](https://www.datafold.com/blog/7-dbt-testing-best-practices)  
-- [12](https://medium.com/indiciumtech/17-dbt-commands-you-should-start-using-today-581998dbf8f0)
+- [12](https://medium.com/indiciumtech/17-dbt-commands-you-should-start-using-today-581998dbf8f0)  
+- [13](https://www.databricks.com/glossary/star-schema#:~:text=A%20star%20schema%20is%20used,like%20transaction%20amounts%20and%20quantities).)  
+- [14](https://www.sqlshack.com/implementing-slowly-changing-dimensions-scds-in-data-warehouses/)  
+- [15](https://www.ibm.com/docs/es/ida/9.1.2?topic=schemas-star)  
+- [16](https://www.ibm.com/docs/es/db2-for-zos/13?topic=modeling-normalization-in-database-design)  
+- [17](https://popsql.com/learn-dbt/dbt-snapshot)  
+- [18](https://medium.com/@vigneshwaran18/scd-using-dbt-and-snowflake-145a2092a713)
