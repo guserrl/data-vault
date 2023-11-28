@@ -32,6 +32,7 @@ models:
           - relationships:
               field: h_customer_haskey
               to: ref('h_customer')
+  #nation
   - name: h_nation
     config:
       materialized: incremental
@@ -292,3 +293,11 @@ models:
           - relationships:
                 field: l_line_item_haskey
                 to: ref('l_line_item')
+  #bridges
+  - name: bridge_customer_nation_region
+    tests:
+      - dbt_expectations.expect_grouped_row_values_to_have_recent_data:
+          group_by: [b_customer_nation_region_haskey]
+          timestamp_column: load_record
+          datepart: day
+          interval: 1

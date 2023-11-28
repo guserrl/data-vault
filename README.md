@@ -50,4 +50,5 @@ Dentro de la carpeta models encontramos:
 - [15](https://www.ibm.com/docs/es/ida/9.1.2?topic=schemas-star)  
 - [16](https://www.ibm.com/docs/es/db2-for-zos/13?topic=modeling-normalization-in-database-design)  
 - [17](https://popsql.com/learn-dbt/dbt-snapshot)  
-- [18](https://medium.com/@vigneshwaran18/scd-using-dbt-and-snowflake-145a2092a713)
+- [18](https://medium.com/@vigneshwaran18/scd-using-dbt-and-snowflake-145a2092a713)  
+- [19](https://forum.ukdatavaultusergroup.co.uk/t/what-are-pit-bridge-tables/164/2)

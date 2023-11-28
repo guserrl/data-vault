@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: fact_line_item
+    tests:
+      - dbt_expectations.expect_table_columns_to_contain_set:
+          column_list: ["custkey","orderkey","part_supp_key"]
+

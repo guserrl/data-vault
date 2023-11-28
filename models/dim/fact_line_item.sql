@@ -28,7 +28,7 @@ with bridge as(
     join {{ref('s_lineitem_receipt')}} lir on b.l_line_item_haskey=lir.l_line_item_haskey 
     join {{ref('s_lineitem_ship')}} lis on b.l_line_item_haskey=lis.l_line_item_haskey 
     join {{ref('s_lineitem_status')}} list on b.l_line_item_haskey=list.l_line_item_haskey
-    where lir.is_active=1 and lis.is_active=1 and list.is_active=1
+    --where lir.is_active=1 and lis.is_active=1 and list.is_active=1
 )
 ,final as (
     select
